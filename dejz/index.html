@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Arbeiten von zu Hause - Bis zu 500€ täglich verdienen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a8a',
+                        secondary: '#f97316',
+                        accent: '#10b981'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(249, 115, 22, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(249, 115, 22, 0.8); }
+        }
+        
+        .breathe {
+            animation: breathe 2s ease-in-out infinite;
+        }
+        
+        .pulse-button {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+        
+        .floating-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .whatsapp-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900">
+    <!-- Dark mode detection -->
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float">
+        <div class="relative">
+            <button onclick="d2()" class="bg-green-500 text-white whatsapp-icon flex items-center justify-center shadow-lg breathe hover:bg-green-600 transition-colors">
+                <i class="fab fa-whatsapp text-2xl"></i>
+            </button>
+            <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center font-bold breathe">1</span>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="gradient-bg text-white py-10 md:py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-3xl md:text-6xl font-bold mb-4 md:mb-6">Arbeiten von zu Hause und hohe Provisionen verdienen</h1>
+            <p class="text-lg md:text-2xl mb-6 md:mb-8 text-blue-100">Verdienen Sie täglich bis zu 500€ zusätzlich</p>
+            <div class="max-w-4xl mx-auto mb-6 md:mb-8">
+                <p class="text-base md:text-lg leading-relaxed text-blue-50">
+                    Wir sind eine offiziell zertifizierte Download-Promotion-Plattform, die mit vielen bekannten Technologieunternehmen zusammenarbeitet, um App-Downloads und Rankings zu steigern. Ihre Aufgabe ist es, Apps auf Ihr Handy herunterzuladen, Umfragen auszufüllen und App-Rankings zu verbessern.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 md:flex md:flex-row items-center justify-center gap-3 md:gap-6 mb-6 md:mb-8">
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3 md:p-4">
+                    <i class="fas fa-graduation-cap text-2xl md:text-3xl mb-1 md:mb-2 text-accent"></i>
+                    <p class="font-semibold text-sm md:text-base">Keine Erfahrung nötig</p>
+                    <p class="text-xs md:text-sm">4 Tage kostenlose Schulung</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3 md:p-4">
+                    <i class="fas fa-users text-2xl md:text-3xl mb-1 md:mb-2 text-accent"></i>
+                    <p class="font-semibold text-sm md:text-base">Teil unseres Teams</p>
+                    <p class="text-xs md:text-sm">Dauerhafte Vorteile</p>
+                </div>
+            </div>
+            <img src="https://www.jacmsotck.online/jz/img/2.jpg" alt="Arbeiten von zu Hause" class="mx-auto mb-6 md:mb-8 rounded-lg shadow-lg max-w-full h-auto">
+            <button onclick="d2()" class="bg-secondary hover:bg-orange-600 text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-full text-lg md:text-xl pulse-button transition-all duration-300 transform hover:scale-105">
+                Kontaktieren Sie uns
+            </button>
+        </div>
+    </header>
+
+    <!-- Benefits Section -->
+    <section class="py-10 md:py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-3 md:mb-4 text-gray-800 dark:text-white">Warum unserem Programm beitreten?</h2>
+            <p class="text-lg md:text-xl text-center mb-10 md:mb-16 text-gray-600 dark:text-gray-300">Entdecken Sie die Vorteile der Zusammenarbeit mit uns</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-700 dark:to-gray-600 p-6 md:p-8 rounded-xl card-hover">
+                    <div class="text-primary dark:text-blue-400 text-3xl md:text-4xl mb-3 md:mb-4">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-gray-800 dark:text-white">Homeoffice-Vorteile</h3>
+                    <p class="text-sm md:text-base text-gray-600 dark:text-gray-300">Flexible Arbeitszeiten und hohes Einkommen</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-700 dark:to-gray-600 p-6 md:p-8 rounded-xl card-hover">
+                    <div class="text-accent text-3xl md:text-4xl mb-3 md:mb-4">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-gray-800 dark:text-white">Keine Standortbeschränkungen</h3>
+                    <p class="text-sm md:text-base text-gray-600 dark:text-gray-300">Arbeiten Sie überall - zu Hause, im Café oder unterwegs</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-gray-700 dark:to-gray-600 p-6 md:p-8 rounded-xl card-hover">
+                    <div class="text-purple-600 text-3xl md:text-4xl mb-3 md:mb-4">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-gray-800 dark:text-white">Nur mobile Geräte</h3>
+                    <p class="text-sm md:text-base text-gray-600 dark:text-gray-300">Erledigen Sie alle Aufgaben nur mit Ihrem Smartphone, kein Computer erforderlich</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-gray-700 dark:to-gray-600 p-6 md:p-8 rounded-xl card-hover">
+                    <div class="text-secondary text-3xl md:text-4xl mb-3 md:mb-4">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-gray-800 dark:text-white">Minimaler Zeitaufwand</h3>
+                    <p class="text-sm md:text-base text-gray-600 dark:text-gray-300">Nur 1-2 Stunden täglich erforderlich</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-gray-700 dark:to-gray-600 p-6 md:p-8 rounded-xl card-hover">
+                    <div class="text-yellow-600 text-3xl md:text-4xl mb-3 md:mb-4">
+                        <i class="fas fa-euro-sign"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-gray-800 dark:text-white">Hohe Belohnungen</h3>
+                    <p class="text-sm md:text-base text-gray-600 dark:text-gray-300">Viele Aufgaben, hohe Vergütung, flexible Zeitplanung</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-teal-50 to-teal-100 dark:from-gray-700 dark:to-gray-600 p-6 md:p-8 rounded-xl card-hover">
+                    <div class="text-teal-600 text-3xl md:text-4xl mb-3 md:mb-4">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-gray-800 dark:text-white">Kostenlose Schulung</h3>
+                    <p class="text-sm md:text-base text-gray-600 dark:text-gray-300">Erhalten Sie kostenlose Anleitung und meistern Sie schnell den Prozess</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-8 md:mt-12">
+                <button onclick="d2()" class="bg-secondary hover:bg-orange-600 text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-full text-lg md:text-xl pulse-button transition-all duration-300 transform hover:scale-105">
+                    Kontaktieren Sie uns
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section class="py-10 md:py-20 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-3 md:mb-4 text-gray-800 dark:text-white">Bewerbungsanforderungen</h2>
+            <p class="text-lg md:text-xl text-center mb-10 md:mb-16 text-gray-600 dark:text-gray-300">Überprüfen Sie, ob Sie unsere einfachen Standards erfüllen</p>
+            
+            <h3 class="text-xl md:text-2xl font-bold text-center mb-8 md:mb-12 text-gray-700 dark:text-gray-200">Wer kann unserem Programm beitreten?</h3>
+            
+            <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-4 md:gap-8">
+                <div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-xl shadow-lg text-center card-hover">
+                    <div class="bg-primary text-white rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-lg md:text-xl font-bold mx-auto mb-4 md:mb-6">1</div>
+                    <div class="text-primary dark:text-blue-400 text-3xl md:text-4xl mb-3 md:mb-4">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-gray-800 dark:text-white">25 Jahre oder älter</h4>
+                    <p class="text-sm md:text-base text-gray-600 dark:text-gray-300">Sie müssen mindestens 25 Jahre alt sein (unter 25 Jahren werden nicht akzeptiert)</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-xl shadow-lg text-center card-hover">
+                    <div class="bg-primary text-white rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-lg md:text-xl font-bold mx-auto mb-4 md:mb-6">2</div>
+                    <div class="text-accent text-3xl md:text-4xl mb-3 md:mb-4">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-gray-800 dark:text-white">Stabiles Internet und Gerät</h4>
+                    <p class="text-sm md:text-base text-gray-600 dark:text-gray-300">Sie benötigen eine zuverlässige Internetverbindung und ein Smartphone</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-xl shadow-lg text-center card-hover">
+                    <div class="bg-primary text-white rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-lg md:text-xl font-bold mx-auto mb-4 md:mb-6">3</div>
+                    <div class="text-secondary text-3xl md:text-4xl mb-3 md:mb-4">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4 text-gray-800 dark:text-white">Grundlegende deutsche Kommunikation</h4>
+                    <p class="text-sm md:text-base text-gray-600 dark:text-gray-300">Fähigkeit zur Kommunikation und zum Gespräch auf Deutsch</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="py-10 md:py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h3 class="text-xl md:text-2xl font-bold text-center mb-8 md:mb-12 text-gray-800 dark:text-white">Was unsere Teilnehmer sagen</h3>
+            <div class="grid md:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto">
+                <div class="bg-gray-50 dark:bg-gray-700 p-4 md:p-6 rounded-xl">
+                    <div class="flex items-center mb-3 md:mb-4">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm md:text-base">MK</div>
+                        <div class="ml-3 md:ml-4">
+                            <h4 class="font-bold text-gray-800 dark:text-white text-sm md:text-base">Maria K.</h4>
+                            <p class="text-xs md:text-sm text-gray-600 dark:text-gray-400">München</p>
+                        </div>
+                    </div>
+                    <p class="text-sm md:text-base text-gray-700 dark:text-gray-300">"Sehr flexible Arbeitszeiten. Ich kann das neben meinem Hauptjob machen und verdiene extra Geld."</p>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-700 p-4 md:p-6 rounded-xl">
+                    <div class="flex items-center mb-3 md:mb-4">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-accent text-white rounded-full flex items-center justify-center font-bold text-sm md:text-base">TS</div>
+                        <div class="ml-3 md:ml-4">
+                            <h4 class="font-bold text-gray-800 dark:text-white text-sm md:text-base">Thomas S.</h4>
+                            <p class="text-xs md:text-sm text-gray-600 dark:text-gray-400">Berlin</p>
+                        </div>
+                    </div>
+                    <p class="text-sm md:text-base text-gray-700 dark:text-gray-300">"Die Schulung war sehr hilfreich. Innerhalb einer Woche konnte ich schon gute Ergebnisse erzielen."</p>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-700 p-4 md:p-6 rounded-xl">
+                    <div class="flex items-center mb-3 md:mb-4">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-secondary text-white rounded-full flex items-center justify-center font-bold text-sm md:text-base">AL</div>
+                        <div class="ml-3 md:ml-4">
+                            <h4 class="font-bold text-gray-800 dark:text-white text-sm md:text-base">Anna L.</h4>
+                            <p class="text-xs md:text-sm text-gray-600 dark:text-gray-400">Hamburg</p>
+                        </div>
+                    </div>
+                    <p class="text-sm md:text-base text-gray-700 dark:text-gray-300">"Perfekt für mich als Mutter. Ich kann arbeiten, während die Kinder schlafen."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Warning Section -->
+    <section class="py-10 md:py-16 bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400">
+        <div class="container mx-auto px-4">
+            <div class="flex items-start">
+                <div class="text-yellow-600 text-2xl md:text-3xl mr-3 md:mr-4 mt-1">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-yellow-800 dark:text-yellow-200">⚠️ Wichtige Risikohinweise</h3>
+                    <div class="text-yellow-700 dark:text-yellow-300 space-y-2 md:space-y-3 text-sm md:text-base">
+                        <p><strong>Einkommenshinweis:</strong> Die genannten Verdienstmöglichkeiten sind Beispiele und nicht garantiert. Ihr tatsächliches Einkommen hängt von verschiedenen Faktoren ab, einschließlich Ihrer Arbeitszeit, verfügbaren Aufgaben und Marktbedingungen.</p>
+                        <p><strong>Zeitaufwand:</strong> Obwohl als "minimal" beworben, kann der tatsächliche Zeitaufwand je nach Anzahl und Komplexität der verfügbaren Aufgaben variieren.</p>
+                        <p><strong>Plattformrichtlinien:</strong> Diese Tätigkeit kann gegen die Nutzungsbedingungen bestimmter App-Stores oder Plattformen verstoßen. Informieren Sie sich über die jeweiligen Richtlinien.</p>
+                        <p><strong>Steuerliche Verpflichtungen:</strong> Einkünfte aus dieser Tätigkeit können steuerpflichtig sein. Konsultieren Sie einen Steuerberater bezüglich Ihrer Meldepflichten.</p>
+                        <p><strong>Keine Beschäftigungsgarantie:</strong> Es besteht keine Garantie für kontinuierliche Arbeitsaufträge oder dauerhaftes Einkommen.</p>
+                        <p><strong>Rechtliche Risiken:</strong> Prüfen Sie die Rechtmäßigkeit solcher Aktivitäten in Ihrem Wohnsitzland, da sich Gesetze und Vorschriften ändern können.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-8 md:py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-6 md:gap-8">
+                <div>
+                    <h5 class="text-base md:text-lg font-bold mb-3 md:mb-4">Über uns</h5>
+                    <p class="text-gray-300 text-xs md:text-sm">Zertifizierte Download-Promotion-Plattform für mobile App-Marketing.</p>
+                </div>
+                <div>
+                    <h5 class="text-base md:text-lg font-bold mb-3 md:mb-4">Services</h5>
+                    <ul class="text-gray-300 text-xs md:text-sm space-y-1 md:space-y-2">
+                        <li>App-Download-Promotion</li>
+                        <li>Ranking-Optimierung</li>
+                        <li>Marktforschung</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-base md:text-lg font-bold mb-3 md:mb-4">Support</h5>
+                    <ul class="text-gray-300 text-xs md:text-sm space-y-1 md:space-y-2">
+                        <li>Kostenlose Schulung</li>
+                        <li>24/7 WhatsApp Support</li>
+                        <li>FAQ & Hilfe</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-base md:text-lg font-bold mb-3 md:mb-4">Rechtliches</h5>
+                    <ul class="text-gray-300 text-xs md:text-sm space-y-1 md:space-y-2">
+                        <li>Datenschutz</li>
+                        <li>AGB</li>
+                        <li>Impressum</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 md:mt-8 pt-6 md:pt-8 text-center">
+                <p class="text-gray-400 text-xs md:text-sm">
+                    © 2024 Digital Marketing Solutions GmbH. Alle Rechte vorbehalten. 
+                    Registriert in Deutschland | Handelsregister: HRB 123456 | 
+                    USt-IdNr.: DE123456789 | 
+                    Geschäftsführer: Max Mustermann | 
+                    Sitz: Berlin, Deutschland
+                </p>
+                <p class="text-gray-500 text-xs mt-2">
+                    Diese Website verwendet Cookies für eine bessere Nutzererfahrung. 
+                    Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA Button -->
+    <div class="floating-cta">
+        <div class="bg-gradient-to-r from-secondary to-orange-600 p-3 md:p-4 shadow-lg">
+            <div class="container mx-auto">
+                <button onclick="d2()" class="w-full bg-white text-secondary font-bold py-3 md:py-4 px-4 md:px-6 rounded-full text-base md:text-lg breathe hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
+                    <i class="fab fa-whatsapp mr-2"></i>
+                    Jetzt kostenlos starten - Kontakt über WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function d2() {
+            window.open('https://wa.me/1234567890?text=Hallo,%20ich%20bin%20interessiert%20an%20Ihrem%20Homeoffice-Programm', '_blank');
+        }
+
+        // Smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects to cards
+            const cards = document.querySelectorAll('.card-hover');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

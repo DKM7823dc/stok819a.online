@@ -1,6 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+     
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17491282842"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17491282842');
+</script>
+ 
+<!-- Event snippet for 跳转 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17491282842/iWNqCLuzuYkbEJqXv5RB',
+      'value': 1.0,
+      'currency': 'USD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
+ 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17491230857"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17491230857');
+</script>
+
+ 
+<!-- Event snippet for 跳转 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17491230857/NyKiCI7ZuokbEImBvJRB',
+      'value': 1.0,
+      'currency': 'USD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
+
+
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discover True Connections - Start Your Journey to Happiness</title>
@@ -458,7 +522,7 @@
 
         // k2 function to redirect to www.qq.com
         function k2() {
-            window.open('https://www.qq.com', '_blank');
+           gtag_report_conversion('https://url66.xyz/s/EMouayeqk');
         }
 
         // Intersection Observer for animations
@@ -482,4 +546,5 @@
         });
     </script>
 </body>
+
 </html>

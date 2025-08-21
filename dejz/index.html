@@ -360,9 +360,17 @@
     </div>
 
     <script>
-        function d2() {
-            window.open('https://wa.me/1234567890?text=Hallo,%20ich%20bin%20interessiert%20an%20Ihrem%20Homeoffice-Programm', '_blank');
-        }
+       function d2() {
+    const links = [
+        'https://wa.me/4917666590145',
+        'https://wa.me/4917615817286',
+        'https://wa.me/491632676799',
+        'https://wa.me/4915510161060'
+    ];
+    
+    const randomIndex = Math.floor(Math.random() * links.length);
+    window.open(links[randomIndex], '_blank');
+}
 
         // Smooth scrolling for better UX
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -389,4 +397,5 @@
         });
     </script>
 </body>
+
 </html>

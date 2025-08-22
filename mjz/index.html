@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Remotely - Daraz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.05); }
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900">
+
+    <!-- Header Section -->
+    <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <!-- Logo -->
+            <div class="bg-white rounded-lg p-2 inline-block mb-6">
+                <img src="img/1.png" 
+                     alt="Daraz Logo" 
+                     class="h-12 w-auto">
+            </div>
+            
+            <h1 class="text-3xl md:text-4xl font-bold mb-4">WORKREMOTELY</h1>
+            <p class="text-lg mb-2">Easy, stable work with a good salary. Get paid the same day.</p>
+            <p class="text-base">Help us process your orders. Anyone can join.</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-6">
+        
+        <!-- Image and Work Info -->
+        <div class="text-center mb-6">
+            <img src="img/1.jpg" 
+                 alt="Remote Work" 
+                 class="mx-auto rounded-lg mb-4 max-w-full h-auto">
+            
+            <div class="bg-orange-500 text-white p-4 rounded-lg mb-4">
+                <p class="font-bold text-lg">Working hours:30 to 120 minutes a day, you can get 2000Tk-45000Tk income.</p>
+            </div>
+        </div>
+
+        <!-- Benefits -->
+        <div class="space-y-4 text-center">
+            <p class="text-base">Ideal for the unemployed,retired,mothers,and singlesto eam money in their free time.</p>
+            <p class="text-base">We provide every assistance you need to improve your work skills so you can earn more in less time.</p>
+            <p class="text-base font-semibold">All you need is a phone or computer. You can choose to work from home or remotely.</p>
+            
+            <img src="img/2.jpg" 
+                 alt="Work From Home" 
+                 class="mx-auto rounded-lg mt-4 max-w-full h-auto">
+        </div>
+
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <button onclick="k2()" class="floating-btn bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full shadow-xl text-base font-semibold">
+        WhatsApp-Contact us now
+    </button>
+
+    <script>
+        function k2() {
+            window.open('https://www.qq.com', '_blank');
+        }
+
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+
+</body>
+</html>
